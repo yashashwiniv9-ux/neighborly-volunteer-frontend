@@ -1,4 +1,5 @@
-const API = import.meta.env.VITE_API_BASE_URL || '/api'
+const API = import.meta.env.VITE_API_BASE_URL
+  || (import.meta.env.PROD ? 'https://neighborly-volunteer-backend.onrender.com/api' : '/api')
 
 async function csrfToken() {
   const response = await fetch(`${API}/auth/csrf`, { credentials: 'include' })
