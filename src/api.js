@@ -1,4 +1,4 @@
-const API = '/api'
+const API = import.meta.env.VITE_API_BASE_URL || '/api'
 
 async function csrfToken() {
   const response = await fetch(`${API}/auth/csrf`, { credentials: 'include' })
